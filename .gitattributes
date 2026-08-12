@@ -1,2 +1,98 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+print('-=-'*20,'Se cadastre primeiro', '-=-'*20)
+print('-'*60, '\033[36m Ou faça o login ','\033[m-'*60)
+mylist = []
+while True:
+    lc = input('O que deseja fazer?: ').strip().lower()
+    if lc == 'sair':
+        break
+    elif lc == 'login':
+        verify = input('Digite seu nome: ')
+        if verify in mylist:
+            while True:
+                print('-'*60,'Logado com sucesso','-'*60)
+                while True:
+                    pergunta = input('\033[36m1.calistenia\n\033[34m2.programação\033[m\n').strip().lower()
+                    if pergunta == 'sair':
+                        break
+                    elif pergunta in ['1', '1.', '1.calistenia', 'calistenia']:
+                        print('-' * 60, 'Otimo', '-' * 60)
+                        pergunta2 = input(
+                            'Quer saber sobre:\n1.O seu nivel\n2.O que é calistenia\n3.como fazer movimentos\n').strip().lower()
+                        if pergunta2 == 'sair':
+                            break
+                        elif pergunta2 in ['1', '1.', '1.o seu nivel', 'o seu nivel']:
+                            print('-' * 60, 'movimentos', '-' * 60)
+                            listmove = ['frogstand: ',
+                                        'elbowlever: ',
+                                        'lsit: ',
+                                        'skin the cat: ',
+                                        'muscleup: ',
+                                        'handstand: ',
+                                        '90 degre hold: ']
+                            ponto = 0
+                            for movimento in listmove:
+                                while True:
+                                    nivel = input('Você sabe o {}'.format(movimento)).strip().lower()
+                                    if nivel in ['s', 'sim']:
+                                        ponto += 1
+                                        break
+                                    elif nivel in ['n', 'nao', 'não']:
+                                        ponto += 0
+                                        break
+                                    else:
+                                        print('digitou algo errado')
+                                        continue
+                            print(
+                                'basico: 0\niniciante nivel 1 incompleto\niniciante nivel 1 completo\niniciante nivel 2 incompleto\niniciante nivel 2 completo')
+                            print('A sua pontuação é de:\033[32m', ponto, '\033[m \n', '-' * 120)
+                            break
+                        elif pergunta2 in ['2', '2.', '2.o que é calistenia', 'o que é calistenia']:
+                            print(
+                                'A calistenia é um método de treinamento que utiliza o peso do próprio corpo para trabalhar a força e resistência muscular, sem precisar de equipamentos de academia e podendo também ser feito em casa.\nAlém de aumentar a força, resistência e consciência corporal, a calistenia aumenta a flexibilidade e a mobilidade. Por isso, as técnicas da calistenia são incorporadas em algumas modalidades esportivas, como crossfit, treinamento funcional ou ginástica, principalmente.\nÉ importante que os exercícios de calistenia sejam feitos sob orientação de um instrutor capacitado, para garantir que as técnicas estão sendo realizadas corretamente, exista menor risco de lesões e seja possível alcançar a maior quantidade de benefícios.')
+                            break
+                        elif pergunta2 in ['3', '3.', '3.como fazer movimentos', 'como fazer movimentos']:
+                            mlist = ['frog stand', 'elbow lever', 'l sit', 'skin the cat', 'muscle up', 'hand stand',
+                                     '90 degre hold']
+                            while True:
+                                move = input('fale um movimento: ').strip().lower()
+                                if move in mlist:
+                                    if move == 'frog stand':
+                                        print('https://youtu.be/hy8h6tFqsLQ?si=piN_NOJvrNaT7chn')
+                                    elif move == 'elbow lever':
+                                        print('https://youtu.be/3ZRoi4R8qjg?si=arKFQneGnPBRbYzI')
+                                    elif move == 'l sit':
+                                        print('https://youtu.be/FeiZ1cCxgkY?si=MrMjYkUKI1XdHC3O')
+                                    elif move == 'skin the cat':
+                                        print('https://youtu.be/5_CstHv05bs?si=6SqJmEHcoG8BImv_')
+                                    elif move == 'muscle up':
+                                        print('https://youtu.be/DjTe164ZwyE?si=OquLCwOncm2yKITW')
+                                    elif move == 'hand stand':
+                                        print('https://youtu.be/iIBbpyiY-Rw?si=IBpENk7wUAyVhc_p')
+                                    elif move == '90 degre hold':
+                                        print('https://youtu.be/kD3gM7Vn1Po?si=X-oNlVXnrQTEB0DX')
+                                    break
+                                else:
+                                    print('Talvez você tenha digitado algo errado')
+                                    continue
+                        else:
+                            print('Talvez algo errado')
+                            continue
+                    elif pergunta in ['2', '2.', '2.programacao', '2.programação', 'programacao', 'programação']:
+                        print('Um dia eu completo essa parta,talvez')
+                        break
+                    else:
+                        print('Talvez algo errado')
+        elif verify == 'sair':
+            break
+        else:
+            print('Pelo visto você não foi cadastrado, abaixo foi iniciado o seu cadastro')
+            cadastro = input('Digite o nome do cadastro: ').strip().lower()
+            mylist.append(cadastro)
+            continue
+    elif lc == 'cadastro':
+        print('Abaixo foi iniciado o seu cadastro')
+        cadastro = input('Digite o nome do cadastro: ').strip().lower()
+        mylist.append(cadastro)
+        continue
